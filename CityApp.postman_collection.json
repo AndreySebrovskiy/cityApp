@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "69e31da2-83ee-4541-9831-fbe446938460",
+		"name": "CityApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get_city_by_id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8991/api/cities/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8991",
+							"path": [
+								"api",
+								"cities",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_city_page",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8991/api/cities?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8991",
+							"path": [
+								"api",
+								"cities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_city_by_name",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8991/api/cities?name=London",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8991",
+							"path": [
+								"api",
+								"cities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "London"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_city",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8991/api/cities/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8991",
+							"path": [
+								"api",
+								"cities",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_city",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"222\",\r\n    \"name\": \"Nungwi\",\r\n    \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Nungwi_%282010-011-1318-T%29.jpg/375px-Nungwi_%282010-011-1318-T%29.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "editor",
+			"item": [
+				{
+					"name": "edit_city",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password3",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "editor",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nungwi\",\r\n    \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Nungwi_%282010-011-1318-T%29.jpg/375px-Nungwi_%282010-011-1318-T%29.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8991/api/cities/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8991",
+							"path": [
+								"api",
+								"cities",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
