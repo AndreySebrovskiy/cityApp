@@ -1,5 +1,8 @@
 # CityApp
 
+backend - java BE
+frontend - Angualar 15 (not working properly)
+
 ## Requirements
 
 - apache-maven-3.8.6 or higher (or use `mvnw` provided in repo)
@@ -8,6 +11,7 @@
 - `docker-compose`
 - Basic Authorization
 - IDE of your choice
+- postman collection
 
 ## architecture approach: hexagonal and ports & adapters
 
