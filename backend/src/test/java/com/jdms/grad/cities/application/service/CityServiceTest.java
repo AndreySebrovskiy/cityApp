@@ -31,7 +31,7 @@ import static org.mockito.Mockito.atLeastOnce;
 
 @ExtendWith(SpringExtension.class)
 @Import(CityService.class)
-public class CityServiceTest {
+class CityServiceTest {
 
     @MockBean
     private DomainFilterMapper domainFilterMapper;
@@ -44,7 +44,7 @@ public class CityServiceTest {
     private CityService service;
 
     @Test
-    public void testUpdate() {
+    void testUpdate() {
         City city = getDefaultCity(0);
         given(repository.findById(any())).willReturn(Optional.of(city));
 
@@ -54,7 +54,7 @@ public class CityServiceTest {
     }
 
     @Test
-    public void testGetCities() {
+    void testGetCities() {
         given(repository.findCities(any(), any())).willReturn(getDefaultPageable());
         given(cityMapper.mapToResponse(any(Page.class))).willCallRealMethod();
         Page<CityResponse> actual = service.findCities( PageRequest.of(0, 20), null);

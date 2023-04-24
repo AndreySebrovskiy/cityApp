@@ -31,5 +31,7 @@ public class AccessFilter implements Filter {
   }
 
   @Override
-  public void destroy() {}
+  public void destroy() {
+    //no need
+  }
 }

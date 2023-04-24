@@ -62,6 +62,7 @@ public class WebSecurityConfig {
     public static final String ALLOW_EDIT = "ALLOW_EDIT";
     public static final String API_CITIES = "/api/cities/*";
 
+    //to skip USER and USER role entity logic
     @Bean
     public InMemoryUserDetailsManager userDetailsService(PasswordEncoder passwordEncoder) {
         // ensure the passwords are encoded properly
@@ -87,7 +88,7 @@ public class WebSecurityConfig {
                 .and()
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests( auth -> {
-//                    auth.requestMatchers(OPTIONS, "/**").permitAll();
+                    auth.requestMatchers(OPTIONS, "/**").permitAll();
                     auth.requestMatchers(GET, API_CITIES).hasAnyRole(USER, ADMIN);
                     auth.requestMatchers(POST, API_CITIES).hasAnyRole(USER, ADMIN);
                     auth.requestMatchers(DELETE, API_CITIES).hasAnyRole(USER, ADMIN);
