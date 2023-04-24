@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="city-init" author="andrei.s">
+        <createTable tableName="city">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="external_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image_url" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="city"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="city-name-index" author="andrei.s">
+        <createIndex tableName="city" indexName="city_name_idx">
+            <column name="name"/>
+        </createIndex>
+        <rollback>
+            <dropIndex indexName="city_name_idx" tableName="city"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

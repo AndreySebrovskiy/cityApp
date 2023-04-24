@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  grad-postgres:
+    image: postgres:13.1-alpine
+    container_name: grad-postgres
+    environment:
+      POSTGRES_DB: grad
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+
+#  backend:
+#    build: .
+#    container_name: grad-backend
+#    ports:
+#      - 8991:8991
+#    depends_on:
+#      - grad-postgres

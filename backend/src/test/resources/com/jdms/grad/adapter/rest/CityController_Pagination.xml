@@ -1,0 +1,6 @@
+<dataset>
+  <city UUID="dbff293a-de39-11ed-b5ea-0242ac120002" external_id="1" name="London" image_url="someurl"/>
+  <city UUID="dbff293a-de39-11ed-b5ea-0242ac120003" external_id="2" name="Prague" image_url="someurl"/>
+  <city UUID="dbff293a-de39-11ed-b5ea-0242ac120004" external_id="3" name="Paris" image_url="someurl"/>
+  <city UUID="dbff293a-de39-11ed-b5ea-0242ac120005" external_id="4" name="Berlin" image_url="someurl"/>
+</dataset>
