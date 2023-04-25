@@ -30,7 +30,7 @@ ENV MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
 
 
 # Compile the code, run unit tests and pack the fat-JAR file
-RUN mvn -T 1C -f /usr/src/app/pom.xml clean package
+RUN mvn clean package
 
 ############################################################################
 
@@ -47,12 +47,12 @@ USER appuser
 WORKDIR /home/appuser
 
 # Get the packed fat-JAR
-COPY --from=build /usr/src/app/${app_jar} /home/appuser/app/app.jar
+COPY --from=build /usr/src/app/backend.jar /home/appuser/app/app.jar
 
 # Make port 8991 available to the world outside this container
 EXPOSE 8991
 
 # Setup application entry point
-ENTRYPOINT ["java","-jar","/home/appuser/app/application.jar", "--spring.config.additional-location=file:/configuration/"]
+ENTRYPOINT ["java","-jar","/home/appuser/app/app.jar", "--spring.config.additional-location=file:/configuration/"]
 
 ############################################################################
