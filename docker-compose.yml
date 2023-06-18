@@ -9,11 +9,3 @@ services:
       POSTGRES_PASSWORD: postgres
     ports:
       - 5432:5432
-
-#  backend:
-#    build: .
-#    container_name: grad-backend
-#    ports:
-#      - 8991:8991
-#    depends_on:
-#      - grad-postgres

@@ -1,8 +1,5 @@
 # CityApp
 
-backend - java BE
-frontend - Angualar 15 (not working properly)
-
 ## Requirements
 
 - apache-maven-3.8.6 or higher (or use `mvnw` provided in repo)
@@ -32,7 +29,7 @@ Execute:
 
 * Run backend (class `GradBackendApplication`)
 
-* defould user credentials:
+* default user credentials:
 
       user: user
       pass: password
@@ -48,3 +45,4 @@ Execute:
 
 * default app port:  `8991`
 
+* app.pull.csv.file=true set to false after first start
