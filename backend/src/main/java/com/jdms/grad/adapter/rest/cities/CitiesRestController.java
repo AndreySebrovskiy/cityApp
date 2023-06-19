@@ -32,7 +32,7 @@ public class CitiesRestController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateEvaluation(@PathVariable UUID id, @RequestBody CityUpdateRequest cityUpdateRequest) {
+    public void updateCity(@PathVariable UUID id, @RequestBody CityUpdateRequest cityUpdateRequest) {
         cityService.updateCity(id, cityUpdateRequest);
     }
 
